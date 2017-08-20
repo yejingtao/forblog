@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Create user </title>
+    </head>
+    <body>
+    	<p th:text="'Hello！, ' + ${thisUser.name} + '!'" >UserName</p>
+        <form th:action="@{/user/saveUser}" method="post">
+            <div><label> User money : <input type="text" name="current" th:value="*{thisUser.current}"/> </label></div>
+            <input type="hidden" name="id" th:value="*{thisUser.id}"/> 
+            <input type="hidden" name="name" th:value="*{thisUser.name}"/> 
+            <div><input type="submit" value="Update"/></div>
+        </form>
+        <table>
+    <tr>
+      <th>ID</th>
+      <th>USER_ID</th>
+      <th>DESCRIPTION</th>
+    </tr>
+    <tr th:each="oper : ${thisOperations}">
+      <td th:text="${oper.id}">222</td>
+      <td th:text="${oper.userId}">333</td>
+      <td th:text="${oper.description}">hello</td>
+    </tr>
+  </table>
+    </body>
+</html>
