@@ -1,14 +1,11 @@
 server:
   port: 9000
-
 spring:
   application:
     name: consumer
-
 management:
   security:
     enabled: false
-   
 eureka:
   client:
     serviceUrl:

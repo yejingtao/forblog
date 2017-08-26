@@ -15,8 +15,7 @@ public class ServiceDemoApplication {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ServiceDemoApplication.class, args);
-	}
-	
+	}	
 	
 	@Value("${server.port}")
     String port;
@@ -26,10 +25,4 @@ public class ServiceDemoApplication {
     public String home(@RequestParam String name) {
         return "hi "+name+",i am from port:" +port;
     }
-    
-    /**
-     * @RequestParam一般对于GET
-     * @RequestHeader
-     * @RequestBody 一般对于POST
-     */
 }
