@@ -1,0 +1,15 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: consumer
+
+management:
+  security:
+    enabled: false
+   
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
