@@ -1,0 +1,19 @@
+server:
+  port: 9051
+
+spring:
+  application:
+    name: demo-feign-freeconsumer
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
+feign:
+  hystrix:
+    enabled: true
+
+#Ribbon 超时时间设置
+#ribbon:
+#  ConnectTimeout: 500
+#  ReadTimeout:  3000
