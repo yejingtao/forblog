@@ -1,0 +1,8 @@
+zuul:
+  routes:
+    user-service-ext:
+      path: /user-service/ext/**
+      serviceId: user-service-ext
+    user-service:
+      path: /user-service/**
+      serviceId: user-service

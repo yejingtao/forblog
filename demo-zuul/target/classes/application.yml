@@ -1,0 +1,28 @@
+server:
+  port: 9053
+
+spring:
+  application:
+    name: demo-zuul
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+
+zuul:
+  routes:
+    demo-feign-freeservice:
+      path: /api-service/**
+    user-service:
+      path: /api-consumer/**
+      serviceId: demo-feign-freeconsumer
+    163:
+      path: /163
+      url: http://www.163.com/
