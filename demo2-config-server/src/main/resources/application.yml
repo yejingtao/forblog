@@ -1,0 +1,25 @@
+server:
+  port: 8001
+  
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yejingtao/forblog
+          search-paths: /config
+          username: username
+          password: password
+  application:
+    name: config-server
+
+security:
+  user:
+    name: user
+    password: ${CONFIG_SERVICE_PASSWORD}
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
