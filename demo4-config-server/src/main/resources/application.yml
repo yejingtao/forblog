@@ -1,0 +1,30 @@
+server:
+  port: 8001
+  
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yejingtao/forblog
+          search-paths: /config
+          username: username
+          password: password
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.226.130
+          defaultBrokerPort: 9092
+          zkNodes: 192.168.226.130
+          defaultZkPort: 2181
+  application:
+    name: config-server
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
+
+management:
+  security:
+    enabled: false
