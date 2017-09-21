@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: sink-stream
+  rabbitmq:
+    host: 192.168.226.133
+    port: 5672
+    username: guest
+    password: guest
+    
+server:
+  port: 8001
