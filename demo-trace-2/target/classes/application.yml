@@ -1,0 +1,16 @@
+server:
+  port: 7082
+
+spring:
+  application:
+    name: trace-2
+  sleuth:
+    sampler:
+      percentage: 0.5
+  zipkin:
+    base-url: http://127.0.0.1:9411
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
