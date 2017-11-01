@@ -1,0 +1,10 @@
+server:
+  port: 7081
+
+spring:
+  data:
+    elasticsearch:
+      cluster-nodes: 192.168.226.133:9300
+      cluster-name: my-es
+      repositories:
+        enabled: true
