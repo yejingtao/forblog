@@ -1,0 +1,8 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: cookie-domain
+
+cookie:
+  value: peer2Cookie
