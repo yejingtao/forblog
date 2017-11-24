@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Create user </title>
+    </head>
+    <body>
+        <form th:action="@{/login}" method="post">
+            <div><label> User Name : <input type="text" name="name"/> </label></div>
+            <div><label> User Password : <input type="password" name="password"/> </label></div>
+            <img src="/security" onclick="refreshSecurityCode(this);" />
+            	&nbsp;
+            <input name="securityCode" 	size="8" />
+            <div><input type="submit" value="Login"/></div>
+        </form>
+    </body>
+    
+<script>
+function refreshSecurityCode(obj) {
+        obj.src = "/security?_t=" + Math.random();
+    }
+</script>
+
+</html>
+
