@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Welcome.</title>
+</head>
+<body>
+    <p th:text="'Hello！, ' + ${ssoUser} + '!, Login Success!'" >UserName</p>
+    <div id="sp"></div>
+</body>
+
+<script th:inline="javascript">
+	onload = function(){
+		setInterval(go,1000);
+	};
+	var x = 3;
+	function go(){
+		x--;
+		if(x>0){
+			document.getElementById('sp').innerHTML = x;
+		}else{
+			var returnUrl = [[${originalUrl}]];
+			location.href = returnUrl;
+		}
+	}
+</script>
+</html>
